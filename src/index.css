@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: white;
   box-sizing: border-box;
 }
 
-.single-key {
+/* .single-key {
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -21,22 +21,127 @@ body {
   border-radius: 70px;
   background-color: #f7f7f7;
   transform: rotate(-45deg);
+  display: block;
 }
-.checkout-btn {
+.single-key h2 {
+  margin: 5px;
+}
+} */
+/* .checkout-btn {
   background: #b4e9f2;
 }
 
 .btn {
   float: right;
   background-color: #9b9b9b;
-  border-radius: 50px;
+  border-radius: 30px;
   width: 1000px;
   margin-top: 40px;
   margin-right: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   padding: 50px;
   text-align: right;
   font-size: 3rem;
+}  */
+
+.btn {
+  text-align: right;
+  background-color: #b4e9f2;
+  padding: 25px;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-top: 40px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+
+.checkout-btn {
+  font-size: 2rem;
+  border-radius: 50;
+  padding: 20px;
+  background: #9b9b9b;
+  color: white;
+}
+
+.qty {
+  display: inline-block;
+}
+
+.qty img {
+  width: 140px;
+  border-radius: 70px;
+  background-color: #f7f7f7;
+  transform: rotate(-45deg);
+  display: block;
+}
+.qty .count {
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 0 2px;
+  min-width: 35px;
+  text-align: center;
+}
+.qty span {
+  box-sizing: border-box;
+}
+.qty .plus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  color: red;
+  border: 2px solid red;
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+}
+.qty .minus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  color: red;
+  border: 2px solid red;
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+div {
+  text-align: center;
+}
+.minus:active {
+  background-color: #ff6241 !important;
+}
+.plus:active {
+  background-color: #ff6241 !important;
+}
+
+span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input {
+  border: 0;
+  width: 2%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:disabled {
+  background-color: white;
 }
 
 .btn:active {

@@ -42,18 +42,9 @@ export default class App extends Component {
     });
   }
 
-  addToCart = e => {
-    try {
-      e.preventDefault();
-      this.setState({
-        total: this.state.total + 1
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
   increment = (e, key) => {
     e.preventDefault();
+
     this.setState({
       ...this.state,
       [key]: this.state[key] ? this.state[key] + 1 : 1
@@ -66,23 +57,31 @@ export default class App extends Component {
       [key]: this.state[key] ? this.state[key] - 1 : 0
     });
   };
+
   render() {
     const keyList = this.state.keys.map(k => {
       return (
-        <div className="single-key" key={k.id}>
+        <div className="qty mt-5">
           <img src={k.image} alt={`key-img ${k.name}`} />
-
-          <h2>{k.name}</h2>
+          <h5>{k.name}</h5>
           <h6>${k.price}</h6>
-          <span className="" onClick={e => this.increment(e, k.key)}>
-            +
+          <span
+            className="minus bg-white"
+            onClick={e => this.decrement(e, k.key)}
+          >
+            -
           </span>
           <input
-            name={k.key}
+            type="number"
+            className="count"
+            name="qty"
             value={this.state[k.key] ? this.state[k.key] : 0}
           />
-          <span className="" onClick={e => this.decrement(e, k.key)}>
-            -
+          <span
+            className="plus bg-white"
+            onClick={e => this.increment(e, k.key)}
+          >
+            +
           </span>
         </div>
       );
@@ -92,7 +91,7 @@ export default class App extends Component {
         <h1 className="f1">KeyMe</h1>
         <Scroll>
           {keyList}
-          <CheckOut />
+          <CheckOut keys={this.state} />
         </Scroll>
       </div>
     );
