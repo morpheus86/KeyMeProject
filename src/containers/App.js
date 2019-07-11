@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Scroll from "../components/Scroll";
 import CheckOut from "../components/CheckOut";
+
 import brass from "../img/kw_plain.f1bf831.png";
 import botteOpener from "../img/bohk.4948d8b.png";
 import dots from "../img/dots.14e3228.png";
@@ -33,7 +34,8 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      keys: []
+      keys: [],
+      total: 0
     };
   }
   componentDidMount() {
@@ -47,14 +49,16 @@ export default class App extends Component {
 
     this.setState({
       ...this.state,
-      [key]: this.state[key] ? this.state[key] + 1 : 1
+      [key]: this.state[key] ? this.state[key] + 1 : 1,
+      total: this.state.total + 1
     });
   };
   decrement = (e, key) => {
     e.preventDefault();
     this.setState({
       ...this.state,
-      [key]: this.state[key] ? this.state[key] - 1 : 0
+      [key]: this.state[key] ? this.state[key] - 1 : 0,
+      total: this.state[key] ? this.state.total - 1 : this.state.total
     });
   };
 
@@ -91,7 +95,7 @@ export default class App extends Component {
         <h1 className="f1">KeyMe</h1>
         <Scroll>
           {keyList}
-          <CheckOut keys={this.state} />
+          <CheckOut total={this.state.total} />
         </Scroll>
       </div>
     );
