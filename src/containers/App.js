@@ -46,13 +46,13 @@ export default class App extends Component {
 
   increment = (e, key) => {
     e.preventDefault();
-
     this.setState({
       ...this.state,
       [key]: this.state[key] ? this.state[key] + 1 : 1,
       total: this.state.total + 1
     });
   };
+
   decrement = (e, key) => {
     e.preventDefault();
     this.setState({
@@ -65,7 +65,8 @@ export default class App extends Component {
   render() {
     const keyList = this.state.keys.map(k => {
       return (
-        <div className="qty mt-5">
+        <div className="qty mt-5" key={k.key}>
+          <div className="background_img" />
           <img src={k.image} alt={`key-img ${k.name}`} />
           <h5>{k.name}</h5>
           <h6>${k.price}</h6>
@@ -79,6 +80,7 @@ export default class App extends Component {
             type="number"
             className="count"
             name="qty"
+            onChange={e => this.handleChange(e.target.value)}
             value={this.state[k.key] ? this.state[k.key] : 0}
           />
           <span

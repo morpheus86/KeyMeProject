@@ -54,8 +54,7 @@ body {
 
 .qty img {
   width: 120px;
-  border-radius: 70px;
-  background-color: #f7f7f7;
+  height: 250px;
   transform: rotate(-45deg);
   display: block;
   margin: auto;
@@ -126,4 +125,16 @@ input::-webkit-inner-spin-button {
 
 input:disabled {
   background-color: white;
+}
+
+.background_img {
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  position: fixed;
+  margin-left: 79px;
+  margin-top: 49px;
+  margin-right: 65px;
+  margin-bottom: 43px;
 }
