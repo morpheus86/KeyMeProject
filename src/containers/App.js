@@ -66,8 +66,9 @@ export default class App extends Component {
     const keyList = this.state.keys.map(k => {
       return (
         <div className="qty mt-5" key={k.key}>
-          <div className="background_img" />
-          <img src={k.image} alt={`key-img ${k.name}`} />
+          <div className="background_img">
+            <img src={k.image} alt={`key-img ${k.name}`} />
+          </div>
           <h5>{k.name}</h5>
           <h6>${k.price}</h6>
           <span
